@@ -6,4 +6,5 @@ port = os.environ.get("PORT", DEBUG_PORT)
 
 application = default_app()
 import controllers.ping # necessary so that Bottle will install its routes
-run(application, host='0.0.0.0', port=port)
+if int(port) == int(DEBUG_PORT): #debugging
+    run(application, host='0.0.0.0', port=port)
