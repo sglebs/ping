@@ -6,4 +6,3 @@ gevent==1.1b5
 #git+git://github.com/schmir/gevent@pypy-hacks
 #Cython==0.23.2
 #git+git://github.com/gevent/gevent.git#egg=gevent
-simplejson==3.8.0
