@@ -3,4 +3,6 @@ newrelic==2.54.0.41
 gunicorn==19.3.0
 #gevent==1.1b5
 #need custom gevent for pypy - https://gist.github.com/flaviamissi/6481472
-git+git://github.com/schmir/gevent@pypy-hacks
+#git+git://github.com/schmir/gevent@pypy-hacks
+Cython==0.23.2
+git+git://github.com/gevent/gevent.git#egg=gevent
