@@ -1,4 +1,6 @@
 bottle==0.12.8
 newrelic==2.54.0.41
 gunicorn==19.3.0
-gevent==1.0.1
+#gevent==1.1b5
+#need custom gevent for pypy - https://gist.github.com/flaviamissi/6481472
+git+git://github.com/schmir/gevent@pypy-hacks
