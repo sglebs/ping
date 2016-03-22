@@ -1,0 +1,4 @@
+disk_quota: 2048
+memory: 256
+name: ping
+buildpack: https://github.com/heroku/heroku-buildpack-python.git
