@@ -1,9 +1,8 @@
-FROM gliderlabs/alpine:3.3
+FROM frolvlad/alpine-python2
 
 WORKDIR /app
 COPY . /app
 
-RUN apk --update add python py-pip
 RUN apk --update add --virtual build-dependencies python-dev build-base \
     && pip install -r requirements.txt \
     && apk del build-dependencies
