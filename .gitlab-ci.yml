@@ -8,6 +8,9 @@ understand-analysis:
    stage: understand-metric
    tags: # runner tag - you passed it when you registered the runner
    - understand
+   artifacts:
+    paths:
+    - ping.udb
    script:
    - echo "Running Understand"
    - und create -languages python ping.udb
