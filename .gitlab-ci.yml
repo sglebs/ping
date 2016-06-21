@@ -1,11 +1,12 @@
 stages:
-- understand-metric
+- understand-analysis
+- understand-kaloi
 - s101-metric
 
 # now the jobs
 
-understand-analysis:
-   stage: understand-metric
+build:understand-analysis:
+   stage: understand-analysis
    tags: # runner tag - you passed it when you registered the runner
    - understand
    artifacts:
@@ -17,18 +18,20 @@ understand-analysis:
    - und add . ping.udb
    - und analyze ping.udb
 
-understand-kaloi:
-   stage: understand-metric
+build:understand-kaloi:
+   stage: understand-kaloi
    dependencies:
-   - understand-analysis
+   - build:understand-analysis
    tags: # runner tag - you passed it when you registered the runner
    - understand
    script:
    - echo "Cap on max metrics" # make sure the runner machine has this in the PYTHONPATH: /Applications/scitools/bin/linux64/python
    - srccheck --in=ping.udb --maxFileMetrics='{"CountLineCode":500,"CountDeclFunction":30,"CountDeclClass":1}' --maxClassMetrics='{"CountDeclMethod":20,"MaxInheritanceTree":4}' --maxRoutineMetrics='{"CountLineCode":80,"CountParams":7,"CyclomaticModified":7}' --maxPrjMetrics='{"AvgCyclomaticModified":3,"MaxNesting":5}' --verbose
 
-s101-analysis:
+build:s101-analysis:
    stage: s101-metric
+   dependencies:
+   - build:understand-analysis
    tags: # runner tag - you passed it when you registered the runner
    - s101
    script:
