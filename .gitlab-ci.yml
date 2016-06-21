@@ -1,0 +1,19 @@
+stages:
+- understand-metric
+- s101-metric
+
+# now the jobs
+
+understand-analysis:
+   stage: understand-metric
+   tags: # runner tag - you passed it when you registered the runner
+   - understand
+   script:
+   - echo "Running Understand"
+
+s101-analysis:
+   stage: s101-metric
+   tags: # runner tag - you passed it when you registered the runner
+   - s101
+   script:
+   - echo "Running s101"
