@@ -10,6 +10,9 @@ understand-analysis:
    - understand
    script:
    - echo "Running Understand"
+   - und create -languages python ping.udb
+   - und add . ping.udb
+   - und analyze ping.udb
 
 s101-analysis:
    stage: s101-metric
