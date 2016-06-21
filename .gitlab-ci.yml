@@ -25,7 +25,7 @@ build:understand-kaloi:
    tags: # runner tag - you passed it when you registered the runner
    - understand
    script:
-   - echo "Cap on max metrics" # make sure the runner machine has this in the PYTHONPATH: /Applications/scitools/bin/linux64/python
+   - echo "Cap on max metrics" # make sure the runner machine has this in the PYTHONPATH: /Applications/scitools/bin/macosx/python
    - srccheck --in=ping.udb --maxFileMetrics='{"CountLineCode":500,"CountDeclFunction":30,"CountDeclClass":1}' --maxClassMetrics='{"CountDeclMethod":20,"MaxInheritanceTree":4}' --maxRoutineMetrics='{"CountLineCode":80,"CountParams":7,"CyclomaticModified":7}' --maxPrjMetrics='{"AvgCyclomaticModified":3,"MaxNesting":5}' --verbose
 
 build:s101-analysis:
