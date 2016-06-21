@@ -12,10 +12,20 @@ understand-analysis:
     paths:
     - ping.udb
    script:
-   - echo "Running Understand"
-   - und create -languages python ping.udb
+   - echo "Running Understand" # make sure the runner machine has this in the PATH: /Applications/scitools/bin/macosx
+   - und create -languages python ping.udb # if python3, pass also: -PythonSetVersion python3
    - und add . ping.udb
    - und analyze ping.udb
+
+understand-kaloi:
+   stage: understand-metric
+   dependencies:
+   - understand-analysis
+   tags: # runner tag - you passed it when you registered the runner
+   - understand
+   script:
+   - echo "Cap on max metrics" # make sure the runner machine has this in the PYTHONPATH: /Applications/scitools/bin/linux64/python
+   - srccheck --in=ping.udb --maxFileMetrics='{"CountLineCode":500,"CountDeclFunction":30,"CountDeclClass":1}' --maxClassMetrics='{"CountDeclMethod":20,"MaxInheritanceTree":4}' --maxRoutineMetrics='{"CountLineCode":80,"CountParams":7,"CyclomaticModified":7}' --maxPrjMetrics='{"AvgCyclomaticModified":3,"MaxNesting":5}' --verbose
 
 s101-analysis:
    stage: s101-metric
