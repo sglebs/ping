@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="gen" associate="file:/Users/mqm/s101-repo/ping" version="4.2.10228" xml-version="3"> <!-- TODO: ENV VAR? -->
+  <property name="show-as-module" value="false" />
+  <property name="publish-architecture-artifacts" value="true" />
+  <property name="params.in" value="const(THIS_FILE)/ping.udb" />
+  <property name="params.keepFiles" value=".*" />
+  <property name="params.mixed" value="false" />
+  <property name="params.analysismode" value="2" />
+  <property name="relative-to" value="const(THIS_FILE)" />
+  <property name="params.understandDir" value="/Applications/scitools/bin/macosx" /> <!-- TODO: ENV VAR? -->
+  <property name="action-set-mod" value="1" />
+  <property name="flavorversion" value="1.0.4" />
+  <property name="use-runner" value="true" />
+  <property name="flavorsite" value="unknown" />
+  <property name="flavorname" value="net.betterdeveloper.understand" />
+  <restructuring>
+    <set version="3" name="Model 1" hiview="Codemap" active="true" todo="false" list="0" />
+  </restructuring>
+  <grid-set sep="@" version="4.2.10228" />
+</local-project>
+

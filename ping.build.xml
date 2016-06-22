@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<headless version="1.0">
+    <operations>
+        <operation type="check-architecture">
+            <argument name="output-file" value="const(THIS_FILE)/arch-violations.csv"/>
+            <argument name="output-dir" value="const(THIS_FILE)/ide-data"/>
+            <argument name="onlyNew" value="true"/>
+            <argument name="check-unassociated" value="true"/>
+            <argument name="fail-on-violations" value="false"/>
+            <argument name="identifier-on-violation" value="XX_ERROR_XX_ARCH"/>
+        </operation>
+        <operation type="report-metrics">
+            <argument name="output-file" value="const(THIS_FILE)/s101-metrics.xml"/>
+        </operation>
+    </operations>
+    <arguments>
+        <argument name="local-project" value="const(THIS_FILE)/ping.udb.gen.hsp">
+        </argument>
+        <argument name="repository" value="/Users/mqm/s101-repo"/> <!-- TODO: ENV VAR? -->
+        <argument name="project" value="ping"/>
+        <argument name="flavor-home" value="/Users/mqm/structure101g/flavors"/> <!-- TODO: ENV VAR? -->
+    </arguments>
+</headless>

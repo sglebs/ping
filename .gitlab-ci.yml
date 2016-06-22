@@ -36,3 +36,4 @@ build:s101-analysis:
    - s101
    script:
    - echo "Running s101"
+   - sh s101.sh
