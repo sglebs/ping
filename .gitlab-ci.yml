@@ -36,5 +36,4 @@ build:s101-analysis:
    - s101
    script:
    - echo "Running s101"
-   - java -Xmx512m -Djava.library.path=/Users/mqm/s101-build -jar /Users/mqm/s101-build/structure101-gen-build.jar ping.build.xml
-   # sh s101.sh
+   - ./s101.sh
