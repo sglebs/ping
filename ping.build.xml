@@ -14,7 +14,7 @@
         </operation>
     </operations>
     <arguments>
-        <argument name="local-project" value="const(THIS_FILE)/ping/ping.udb.gen.hsp"> <!-- BUG in s101: const(THIS_FILE) is pointing at the home dir, not the dir of this file -->
+        <argument name="local-project" value="/Users/mqm/git/ping/ping.udb.gen.hsp"> <!-- BUG in s101: const(THIS_FILE) is pointing at the home dir, not the dir of this file -->
         </argument>
         <argument name="repository" value="/Users/mqm/s101-repo"/> <!-- TODO: ENV VAR? -->
         <argument name="project" value="ping"/>
