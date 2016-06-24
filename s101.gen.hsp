@@ -2,7 +2,7 @@
 <local-project language="gen" associate="file:/Users/mqm/s101-repo/ping" version="4.2.10228" xml-version="3"> <!-- TODO: ENV VAR? -->
   <property name="show-as-module" value="false" />
   <property name="publish-architecture-artifacts" value="true" />
-  <property name="params.in" value="/Users/mqm/git/ping/ping.udb" /> <!-- BUG in s101: const(THIS_FILE) is pointing at the home dir, not the dir of this file -->
+  <property name="params.in" value="const(THIS_FILE)/ping.udb" />
   <property name="params.keepFiles" value=".*" />
   <property name="params.mixed" value="false" />
   <property name="params.analysismode" value="2" />
