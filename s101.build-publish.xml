@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<headless version="1.0">
+    <operations>
+        <operation type="publish"> <!-- http://structure101.com/help/generic/studio/#cli/headless-publish.html%3FTocPath%3DBuild%2520Integration%7CBuild%7C_____1 -->
+        </operation>
+    </operations>
+    <arguments>
+        <argument name="local-project" value="const(THIS_FILE)/s101.gen.hsp">
+        </argument>
+        <argument name="repository" value="/Users/mqm/s101-repo"/> <!-- TODO: ENV VAR? -->
+        <argument name="project" value="ping"/>
+        <argument name="flavor-home" value="/Users/mqm/structure101g/flavors"/> <!-- TODO: ENV VAR? -->
+    </arguments>
+</headless>

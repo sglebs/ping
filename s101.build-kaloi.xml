@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <headless version="1.0">
     <operations>
-        <operation type="check-architecture">
+        <operation type="check-architecture"> <!-- http://structure101.com/help/generic/studio/#cli/headless-checkarch.html%3FTocPath%3DBuild%2520Integration%7CBuild%7C_____2 -->
             <argument name="output-file" value="const(THIS_FILE)/arch-violations.csv"/>
             <argument name="output-dir" value="const(THIS_FILE)/ide-data"/>
             <argument name="onlyNew" value="true"/>
             <argument name="check-unassociated" value="true"/>
             <argument name="fail-on-violations" value="false"/>
             <argument name="identifier-on-violation" value="XX_ERROR_XX_ARCH"/>
-        </operation>
-        <operation type="report-metrics">
-            <argument name="output-file" value="const(THIS_FILE)/s101-metrics.xml"/>
         </operation>
     </operations>
     <arguments>

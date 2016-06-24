@@ -1,7 +1,8 @@
 stages:
 - understand-analysis
 - understand-kaloi
-- s101-metric
+- s101-kaloi
+- s101-publish # in theory you only want this stage in integrated code, maybe even just Release Candidate
 
 # now the jobs
 
@@ -13,7 +14,7 @@ build:understand-analysis:
     paths:
     - ping.udb
    script:
-   - echo "Running Understand" # make sure the runner machine has this in the PATH: /Applications/scitools/bin/macosx
+   - echo "Running Understand - see https://scitools.com " # make sure the runner machine has this in the PATH: /Applications/scitools/bin/macosx
    - und create -languages python ping.udb # if python3, pass also: -PythonSetVersion python3
    - und add . ping.udb
    - und analyze ping.udb
@@ -26,14 +27,25 @@ build:understand-kaloi:
    - understand
    script:
    - echo "Cap on max metrics" # make sure the runner machine has this in the PYTHONPATH: /Applications/scitools/bin/macosx/python
+   - echo "Uses srccheck - see https://github.com/sglebs/srccheck "
    - srccheck --in=ping.udb --maxFileMetrics='{"CountLineCode":500,"CountDeclFunction":30,"CountDeclClass":1}' --maxClassMetrics='{"CountDeclMethod":20,"MaxInheritanceTree":4}' --maxRoutineMetrics='{"CountLineCode":80,"CountParams":7,"CyclomaticModified":7}' --maxPrjMetrics='{"AvgCyclomaticModified":3,"MaxNesting":5}' --verbose
 
-build:s101-analysis:
-   stage: s101-metric
+build:s101-kaloi:
+   stage: s101-kaloi
    dependencies:
    - build:understand-analysis
    tags: # runner tag - you passed it when you registered the runner
    - s101
    script:
-   - echo "Running s101"
-   - ./s101.sh
+   - echo "Running s101 in Kaloi mode. See http://structure101.com/legacy/build/ "
+   - ./s101.sh s101.build-kaloi.xml
+
+build:s101-publish:
+   stage: s101-publish
+   dependencies:
+   - build:understand-analysis
+   tags: # runner tag - you passed it when you registered the runner
+   - s101
+   script:
+   - echo "Running s101 in Publishing mode"
+   - ./s101.sh s101.build-publish.xml
