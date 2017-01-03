@@ -2,3 +2,4 @@
 locustio
 # for locust under Python 3 use the following one (segfaults on my MacOS)
 #git+https://github.com/locustio/locust.git
+pyzmq
