@@ -1,5 +1,6 @@
 bottle==0.12.11
 newrelic==2.54.0.41
+uWSGI==2.0.14
 gunicorn==19.6.0
 gevent==1.2.0
 #need custom gevent for pypy - https://gist.github.com/flaviamissi/6481472
