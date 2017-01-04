@@ -8,6 +8,5 @@ This directory provides the setup needed to run  [locust](http://locust.io).
  * Create a Python 2.7 virtualenv for locust and activate it: virvtualenv ./env ; source ./env/bin/activate
  * Install the required modules from requirements.txt in this stress dir: pip install -r requirements.txt
  * Bump the number of open handles in the shell: ulimit -n 4096
- * Launch locust against the running ping server: locust -f ./locustfile.py --host=http://localhost:8080
- 
+ * Launch locust against the running ping server using the provided script run.sh
 
