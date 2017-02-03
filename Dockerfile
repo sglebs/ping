@@ -9,6 +9,14 @@ EXPOSE 8080
 # to emulate Heroku - env var has port. 8080 for OpenShift defaults compatibility
 ENV PORT 8080
 
+# Provide a default so that this image can be run with docker run locally if needed
+ENV PROCFILE_TARGET web
+
+# Run the image as a non-root user. Needed for Heroku.
+RUN adduser -D myuser
+USER myuser
+
+
 # Make sure we honor the cmd-line in the Procfile
 CMD exec `grep $PROCFILE_TARGET Procfile | sed 's/'$PROCFILE_TARGET':/ /'`
 #CMD uwsgi --disable-logging --http-socket :$PORT --module wsgi  --gevent 512 --gevent-monkey-patch  --processes `expr 1 \+ 2 \* $(getconf _NPROCESSORS_ONLN)`  --listen 128
